@@ -12,8 +12,17 @@ const Info = () => {
     //     console.log('#2 마운트 될 때만 실행');
     // }, []); 
 
+    // useEffect(()=>{
+    //     console.log('#3 특정 값이 업데이트될 때만 실행');
+    // }, [name]);   
+
     useEffect(()=>{
-        console.log('#3 특정 값이 업데이트될 때만 실행');
+        console.log('#4 effect');
+        console.log(name);
+        return ()=>{
+            console.log('cleanup(뒷정리하기)');
+            console.log(name);
+        };
     }, [name]);   
 
     const onChangeName = (e:any) =>{
