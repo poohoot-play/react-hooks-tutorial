@@ -3,10 +3,14 @@ import {useState, useEffect} from 'react';
 const Info = () => {
     const [name, setName] = useState('');
     const [nickname, setNickname] = useState('');
+    // useEffect(()=>{
+    //     console.log('#1 렌더링 완료');
+    //     console.log({name, nickname});
+    // });
+
     useEffect(()=>{
-        console.log('렌더링 완료');
-        console.log({name, nickname});
-    });
+        console.log('#2 마운트 될 때만 실행');
+    }, []); 
 
     const onChangeName = (e:any) =>{
         setName(e.target.value);
