@@ -8,9 +8,13 @@ const Info = () => {
     //     console.log({name, nickname});
     // });
 
+    // useEffect(()=>{
+    //     console.log('#2 마운트 될 때만 실행');
+    // }, []); 
+
     useEffect(()=>{
-        console.log('#2 마운트 될 때만 실행');
-    }, []); 
+        console.log('#3 특정 값이 업데이트될 때만 실행');
+    }, [name]);   
 
     const onChangeName = (e:any) =>{
         setName(e.target.value);
