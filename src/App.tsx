@@ -1,6 +1,8 @@
+import Counter from "./Counter";
+
 const App = () => {
   return (
-    <div>Hooks</div>
+    <Counter/>
   );
 }
 
