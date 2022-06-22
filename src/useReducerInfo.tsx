@@ -1,6 +1,21 @@
 import {useReducer} from 'react';
 
-function reducer(state:any, action:any){
+interface InfoState {
+    name:string;
+    nickname:string;
+}
+
+interface InfoAction {
+    name:string;
+    value:string;
+}
+
+const initailState:InfoState = {
+    name:'', 
+    nickname:'',
+}
+
+function reducer(state:InfoState, action:InfoAction){
     return {
         ...state,
         [action.name]: action.value
@@ -8,14 +23,11 @@ function reducer(state:any, action:any){
 }
 
 const Info = () => {
-    const [state, dispatch] = useReducer(reducer, {
-        name:'', 
-        nickname:''
-    });
+    const [state, dispatch] = useReducer(reducer, initailState);
 
     const {name, nickname} = state;
 
-    const onChange = (e:any) => {
+    const onChange = (e:React.ChangeEvent<HTMLInputElement>) => {
         dispatch(e.target)
     }
 

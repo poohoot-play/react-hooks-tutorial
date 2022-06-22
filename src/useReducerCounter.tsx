@@ -1,24 +1,35 @@
 import { useReducer } from "react";
 
-function reducer(state:any, action:any){
-    // action.type에 따라 다른 작업 수행
+interface CounterState {
+    value:number;
+}
+
+const initialState:CounterState = {
+    value:1,
+}
+
+type CounterAction = 
+    | {type:'INCREMENT'}
+    | {type:'DECREMENT'; by:number}
+
+function reducer(state:CounterState, action:CounterAction){
     switch(action.type){
         case 'INCREMENT':
             return { value:state.value + 1};
         case 'DECREMENT':
-            return { value:state.value - 1};
+            return { value:state.value - action.by};
         default :
-            return state;
+            throw new Error('Unhandled action type');
     }
 }
 
 const Counter = () => {
-    const [state, dispatch] = useReducer(reducer, {value:0});
+    const [state, dispatch] = useReducer(reducer, initialState);
 
     return <div>
         <p>현재 카운터 : <b>{state.value}</b></p>
         <button onClick={()=>dispatch({type:'INCREMENT'})}>+1</button>
-        <button onClick={()=>dispatch({type:'DECREMENT'})}>-1</button>
+        <button onClick={()=>dispatch({type:'DECREMENT', by:1})}>-1</button>
     </div>
 }
 
