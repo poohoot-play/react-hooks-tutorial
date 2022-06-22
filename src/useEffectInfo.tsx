@@ -25,11 +25,11 @@ const Info = () => {
         };
     }, [name]);   
 
-    const onChangeName = (e:any) =>{
+    const onChangeName = (e:React.ChangeEvent<HTMLInputElement> ) =>{
         setName(e.target.value);
     }
 
-    const onChangeNickName = (e:any) =>{
+    const onChangeNickName = (e:React.ChangeEvent<HTMLInputElement> ) =>{
         setNickname(e.target.value);
     }    
 
