@@ -11,7 +11,7 @@ const Average = () => {
     const [list, setList] = useState<number[]>([]);
     const [number, setNumber] = useState<string>('');
 
-    const onChange = (e:any) => {
+    const onChange = (e:React.ChangeEvent<HTMLInputElement> ) => {
         setNumber(e.target.value);
     };
 
