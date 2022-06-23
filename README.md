@@ -21,4 +21,12 @@
 ## useMemo
 
 - 함수형 컴포넌트 내부에서 발생하는 연산을 최적화
+- 숫자, 문자열, 객체처럼 일반값 재사용
 - useMemoAverage.tsx
+
+## useCallback
+
+- useMemo와 상당히 비슷
+- 렌더링 성능 최적화
+- 함수 재사용
+- useCallbackAverage.tsx
