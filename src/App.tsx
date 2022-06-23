@@ -6,7 +6,8 @@ import { useState } from 'react';
 // import UseReducerCounter from './useReducerCounter'; // #4 useReducer(카운터)
 // import UseReducerInfo from './useReducerInfo'; // #5 useReducer(인풋텍스트)
 // import UseMemoAverage from './useMemoAverage'; // #6 useMemo(인풋텍스트)
-import UseCallbackAverage from './useCallbackAverage'; // #7 useCallback(인풋텍스트)
+// import UseCallbackAverage from './useCallbackAverage'; // #7 useCallback(인풋텍스트)
+import UseRefAverage from './useRefAverage'; // #8 useRef(인풋텍스트)
 
 const App = () => {
   const [visible, setVisible] = useState(false);
@@ -27,7 +28,8 @@ const App = () => {
       {/* {visible && <UseReducerCounter/>} */}
       {/* {visible && <UseReducerInfo/>} */}
       {/* {visible && <UseMemoAverage />} */}
-      {visible && <UseCallbackAverage />}
+      {/* {visible && <UseCallbackAverage />} */}
+      {visible && <UseRefAverage />}
     </>
   );
 };

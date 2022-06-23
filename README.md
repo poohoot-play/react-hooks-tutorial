@@ -30,3 +30,7 @@
 - 렌더링 성능 최적화
 - 함수 재사용
 - useCallbackAverage.tsx
+
+## useRef
+
+- ref를 쉽게 사용
