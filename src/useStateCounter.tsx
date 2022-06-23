@@ -1,13 +1,18 @@
-import { useState } from "react";
+import React from 'react';
+import { useState } from 'react';
 
 const Counter = () => {
-    const [value, setValue] = useState(0);
+  const [value, setValue] = useState(0);
 
-    return <div>
-        <p>현재 카운터 : <b>{value}</b></p>
-        <button onClick={()=>setValue(value + 1)}>+1</button>
-        <button onClick={()=>setValue(value - 1)}>-1</button>
+  return (
+    <div>
+      <p>
+        현재 카운터 : <b>{value}</b>
+      </p>
+      <button onClick={() => setValue(value + 1)}>+1</button>
+      <button onClick={() => setValue(value - 1)}>-1</button>
     </div>
-}
+  );
+};
 
 export default Counter;

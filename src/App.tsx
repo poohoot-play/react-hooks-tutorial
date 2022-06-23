@@ -1,4 +1,5 @@
-import {useState} from 'react';
+import React from 'react';
+import { useState } from 'react';
 // import UseStateCounter from "./useStateCounter"; // #1 useState 하나 사용(카운터)
 // import UseStateInfo from "./useStateInfo"; // #2 useState 여러번 사용(인풋텍스트)
 // import UseEffectInfo from './useEffectInfo'; // #3 useEffect(인풋텍스트)
@@ -11,22 +12,22 @@ const App = () => {
 
   return (
     <>
-      <button onClick={()=>{
-        setVisible(!visible);
-      }}>
-        {visible ? '숨기기':'보이기'}
+      <button
+        onClick={() => {
+          setVisible(!visible);
+        }}
+      >
+        {visible ? '숨기기' : '보이기'}
       </button>
-      <hr/>
-        {/* {visible && <UseStateCounter/>} */}
-        {/* {visible && <UseStateInfo/>} */}
-        {/* {visible && <UseEffectInfo/>} */}
-        {/* {visible && <UseReducerCounter/>} */}
-        {/* {visible && <UseReducerInfo/>} */}
-        {visible && <UseMemoAverage/> }
+      <hr />
+      {/* {visible && <UseStateCounter/>} */}
+      {/* {visible && <UseStateInfo/>} */}
+      {/* {visible && <UseEffectInfo/>} */}
+      {/* {visible && <UseReducerCounter/>} */}
+      {/* {visible && <UseReducerInfo/>} */}
+      {visible && <UseMemoAverage />}
     </>
-
-    
   );
-}
+};
 
 export default App;
