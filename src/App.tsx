@@ -5,8 +5,9 @@ import React, { useState } from 'react';
 
 // import UseEffectInfo from './useEffectInfo'; // useEffect(인풋텍스트)
 
-import UseReducerCounter from './useReducerCounter'; // useReducer(카운터)
+// import UseReducerCounter from './useReducerCounter'; // useReducer(카운터)
 // import UseReducerInfo from './useReducerInfo'; // useReducer(인풋텍스트)
+import UseReducerSample from './useReducerSample'; // useReducer
 
 // import UseMemoAverage from './useMemoAverage'; // useMemo(인풋텍스트)
 
@@ -38,8 +39,9 @@ const App = () => {
 
       {/* {visible && <UseEffectInfo/>} */}
 
-      {visible && <UseReducerCounter />}
+      {/* {visible && <UseReducerCounter />} */}
       {/* {visible && <UseReducerInfo/>} */}
+      {visible && <UseReducerSample />}
 
       {/* {visible && <UseMemoAverage />} */}
 
