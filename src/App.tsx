@@ -1,15 +1,25 @@
 import React, { useState } from 'react';
-import UseStateCounter from './useStateCounter'; // #1 useState 하나 사용(카운터)
-// import UseStateInfo from "./useStateInfo"; // #2 useState 여러번 사용(인풋텍스트)
-// import UseEffectInfo from './useEffectInfo'; // #3 useEffect(인풋텍스트)
-// import UseReducerCounter from './useReducerCounter'; // #4 useReducer(카운터)
-// import UseReducerInfo from './useReducerInfo'; // #5 useReducer(인풋텍스트)
-// import UseMemoAverage from './useMemoAverage'; // #6 useMemo(인풋텍스트)
-// import UseCallbackAverage from './useCallbackAverage'; // #7 useCallback(인풋텍스트)
-// import UseRefAverage from './useRefAverage'; // #8 useRef(인풋텍스트)
+// import UseStateCounter from './useStateCounter'; // useState 하나 사용(카운터)
+// import UseStateInfo from './useStateInfo'; // useState 여러번 사용(인풋텍스트)
+import UseStateMyForm from './useStateMyForm'; // useState와 Form
+
+// import UseEffectInfo from './useEffectInfo'; // useEffect(인풋텍스트)
+
+// import UseReducerCounter from './useReducerCounter'; // useReducer(카운터)
+// import UseReducerInfo from './useReducerInfo'; // useReducer(인풋텍스트)
+
+// import UseMemoAverage from './useMemoAverage'; // useMemo(인풋텍스트)
+
+// import UseCallbackAverage from './useCallbackAverage'; // useCallback(인풋텍스트)
+
+// import UseRefAverage from './useRefAverage'; // useRef(인풋텍스트)
 
 const App = () => {
   const [visible, setVisible] = useState(false);
+
+  const onSubmit = (form: { name: string; description: string }) => {
+    console.log(form);
+  };
 
   return (
     <>
@@ -21,13 +31,20 @@ const App = () => {
         {visible ? '숨기기' : '보이기'}
       </button>
       <hr />
-      {visible && <UseStateCounter />}
-      {/* {visible && <UseStateInfo/>} */}
+
+      {/* {visible && <UseStateCounter />} */}
+      {/* {visible && <UseStateInfo />} */}
+      {visible && <UseStateMyForm onSubmit={onSubmit} />}
+
       {/* {visible && <UseEffectInfo/>} */}
+
       {/* {visible && <UseReducerCounter/>} */}
       {/* {visible && <UseReducerInfo/>} */}
+
       {/* {visible && <UseMemoAverage />} */}
+
       {/* {visible && <UseCallbackAverage />} */}
+
       {/* {visible && <UseRefAverage />} */}
     </>
   );
