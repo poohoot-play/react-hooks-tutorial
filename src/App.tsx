@@ -13,7 +13,7 @@ import UseReducerSample from './useReducerSample'; // useReducer
 
 // import UseCallbackAverage from './useCallbackAverage'; // useCallback(인풋텍스트)
 
-// import UseRefAverage from './useRefAverage'; // useRef(인풋텍스트)
+import UseRefAverage from './useRefAverage'; // useRef(인풋텍스트)
 
 const App = () => {
   const [visible, setVisible] = useState(false);
@@ -47,7 +47,7 @@ const App = () => {
 
       {/* {visible && <UseCallbackAverage />} */}
 
-      {/* {visible && <UseRefAverage />} */}
+      {visible && <UseRefAverage />}
     </>
   );
 };
