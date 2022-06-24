@@ -10,7 +10,7 @@ const initialState: CounterState = {
 
 type CounterAction = { type: 'INCREMENT' } | { type: 'DECREMENT'; by: number };
 
-function reducer(state: CounterState, action: CounterAction) {
+function reducer(state: CounterState, action: CounterAction): CounterState {
   switch (action.type) {
     case 'INCREMENT':
       return { value: state.value + 1 };
