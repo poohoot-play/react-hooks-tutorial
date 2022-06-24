@@ -1,9 +1,8 @@
-import React from 'react';
-import { useReducer } from 'react';
+import React, { useReducer } from 'react';
 
-interface CounterState {
+type CounterState = {
   value: number;
-}
+};
 
 const initialState: CounterState = {
   value: 1,
@@ -22,18 +21,18 @@ function reducer(state: CounterState, action: CounterAction) {
   }
 }
 
-const Counter = () => {
+function Counter() {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const onIncrease = () => dispatch({ type: 'INCREMENT' });
+  const onDecrease = () => dispatch({ type: 'DECREMENT', by: 1 });
 
   return (
     <div>
-      <p>
-        현재 카운터 : <b>{state.value}</b>
-      </p>
-      <button onClick={() => dispatch({ type: 'INCREMENT' })}>+1</button>
-      <button onClick={() => dispatch({ type: 'DECREMENT', by: 1 })}>-1</button>
+      <h1>{state.value}</h1>
+      <button onClick={onIncrease}>+1</button>
+      <button onClick={onDecrease}>-1</button>
     </div>
   );
-};
+}
 
 export default Counter;
